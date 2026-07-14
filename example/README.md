@@ -1,11 +1,11 @@
-# snptx1.github.io/professional/resume/
+# snptx1.github.io/professional/example/
 
 Per-application tailored resume variants. One folder per posting.
 
 ## URL pattern
 
 ```
-https://snptx1.github.io/professional/resume/<slug>/
+https://snptx1.github.io/professional/example/<slug>/
 ```
 
 where `<slug>` is `<YYYY-MM-DD>__<company>__<role-slug>`, mirroring the run
@@ -13,11 +13,11 @@ folder name in the private `snptx-core` scaffolding.
 
 ## What lives here
 
-- `resume/<slug>/index.html` — the tailored HTML resume
-- `resume/<slug>/resume.pdf` — the shipped PDF (optional, for direct portal upload)
-- `resume/<slug>/cover_letter.pdf` — the shipped cover letter (optional)
+- `example/<slug>/index.html` — the tailored HTML resume
+- `example/<slug>/resume.pdf` — the shipped PDF (optional, for direct portal upload)
+- `example/<slug>/cover_letter.pdf` — the shipped cover letter (optional)
 
-Nothing under `resume/<slug>/` is discoverable from the canonical resume at
+Nothing under `example/<slug>/` is discoverable from the canonical resume at
 the root of this repo. Each URL is only shared with the specific applicant
 portal or recruiter.
 
