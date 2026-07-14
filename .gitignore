@@ -1,0 +1,8 @@
+# Placeholder files that only exist to keep otherwise-empty directories
+# tracked in the private workspace. These should never be committed to the
+# public snptx1/professional repo.
+**/.gitkeep
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
