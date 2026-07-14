@@ -1180,21 +1180,21 @@
           <h3>SNPTX <span class="role">&middot; Founder &amp; Systems Engineer</span> <span class="glow-badge ilab">Harvard Innovation Lab</span></h3>
           <span class="xp-dates">2022 &ndash; Present</span>
         </div>
-        <div class="xp-org"><strong>SNPTX</strong> &middot; deterministic ML orchestration for biomedical discovery &middot; supported by the <strong><a class="no-underline" href="https://innovationlabs.harvard.edu/">Harvard Innovation Labs</a></strong> &middot; Cambridge, MA</div>
+        <div class="xp-org"><strong>SNPTX</strong> &middot; autonomous ML/DL framework for biomedical discovery &middot; supported by the <strong><a class="no-underline" href="https://innovationlabs.harvard.edu/">Harvard Innovation Labs</a></strong> &middot; Cambridge, MA</div>
         <div class="xp-body">
-          <p><!--SLOT:SNPTX_LEAD-->Founded and single-handedly built SNPTX, a reproducibility-first orchestration framework that turns fragmented biomedical ML workflows into content-hashed, provenance-tracked, deterministic pipelines. The thesis: research-grade ML in life sciences fails commercially because it cannot be re-executed by a second party at a second point in time. SNPTX makes that re-execution the default rather than the exception.<!--/SLOT:SNPTX_LEAD--></p>
+          <p><!--SLOT:SNPTX_LEAD-->Founded and solo-built SNPTX, an autonomous ML/DL framework for biomedical discovery. Multi-modal graph, sequence, and generative modeling across eight modality families and 46 active biomedical datasets, closed-loop with a Gaussian-process-guided autonomous experimentation engine that runs at production throughput. The build spans PyTorch (GNNs, diffusion models, transformer-based NLP), LLM / agent orchestration, and lab-hosted deployment on a research-grade provenance spine.<!--/SLOT:SNPTX_LEAD--></p>
           <ul class="xp-bullets"><!--SLOT:SNPTX_BULLETS-->
-            <li>Architected and implemented the full stack solo: Snakemake DAGs, DVC-versioned data, MLflow experiment tracking, PyTorch model layer (graph neural networks, diffusion models, transformer-based NLP), LLM/LangChain agent tooling, containerized runtime, and CI-enforced reproducibility gates.</li>
-            <li>Shipped a five-minute end-to-end reproduction repository (<a href="https://github.com/snptx1/snptx-repro-chembl">snptx-repro-chembl</a>) that reproduces a ChEMBL bioactivity GCN baseline from a clean clone on commodity CPU, with stated headline metric — used as the trust artifact for external technical review.</li>
-            <li>Executed and published a bounded reproduction of the DeepDDS drug-synergy graph-attention model (<a href="https://github.com/snptx1/snptx-repro-deepdds">snptx-repro-deepdds</a>) under the same deterministic harness.</li>
-            <li>Positioning SNPTX for pilot engagements with academic labs and translational-research groups; assembled a reviewer-facing inspection surface at <a href="https://snptx1.github.io/snptx-academic/index.html#for-review">snptx-academic</a> designed to be evaluated end-to-end without follow-up.</li>
-            <li>Concurrently completing the Harvard ALM in Data Science &amp; Artificial Intelligence (4.00/4.00 GPA), routing every graduate final project into SNPTX as a bounded reproducibility artifact.</li>
+            <li><strong>Model layer.</strong> PyTorch graph neural networks (GCN, GAT) for molecular and knowledge graphs; diffusion models; transformer-based biomedical NLP (BiLSTM-CRF and BERT-family NER on BC5CDR); vision + tabular fusion across imaging, omics, and spatial transcriptomics. Public benchmarks include ChEMBL antibacterial 5-fold CV 97.5%, drug-GCN baseline 98.5%, and Visium spatial fusion 93.0%.</li>
+            <li><strong>Autonomous experimentation (ExperimentEngine).</strong> Gaussian-process surrogates with Expected-Improvement and Value-of-Information acquisition and sequential-probability-ratio-test stopping (&alpha; = &beta; = 0.05); DuckDB experiment catalog. Validated at 1,037 experiments per hour and 104 discoveries per 1,100-experiment campaign; surrogate expected calibration error 0.055.</li>
+            <li><strong>LLM &amp; agent tooling.</strong> LangChain-based agent orchestration and prompt engineering for scientific reasoning workflows layered over the model catalog; retrieval, tool-use, and evaluation surfaces feeding the same experimentation loop.</li>
+            <li><strong>Deployment &amp; benchmark surface.</strong> FastAPI inference (tabular / fusion / batch), RBAC with HMAC-signed tokens, and hash-chained audit at a 21 CFR Part 11 posture, lab-hosted via Terraform + Helm. Cross-lab benchmark surface with leakage-free splits and calibration-corrected leaderboards. Two external trust artifacts: <a href="https://github.com/snptx1/snptx-repro-chembl">snptx-repro-chembl</a> (~5-min CPU reproduction of the ChEMBL bioactivity GCN baseline) and <a href="https://github.com/snptx1/snptx-repro-deepdds">snptx-repro-deepdds</a> (DeepDDS drug-synergy graph-attention).</li>
+            <li>Positioning SNPTX for pilot engagements with academic labs and translational-research groups; reviewer-facing inspection surface at <a href="https://snptx1.github.io/snptx-academic/index.html#for-review">snptx-academic</a>. Concurrently completing the Harvard ALM in Data Science &amp; Artificial Intelligence at 4.00 / 4.00 GPA, routing each graduate final project into SNPTX as a bounded modeling artifact.</li>
           <!--/SLOT:SNPTX_BULLETS--></ul>
           <div class="xp-stack">
-            <span class="tag">Snakemake</span><span class="tag">DVC</span><span class="tag">MLflow</span>
             <span class="tag">PyTorch</span><span class="tag">Graph Neural Nets</span><span class="tag">Diffusion Models</span>
-            <span class="tag">LangChain / LLM Agents</span><span class="tag">Python</span><span class="tag">Docker</span>
-            <span class="tag">CI / Reproducibility Gates</span><span class="tag">Content-Hashed Data</span>
+            <span class="tag">Transformer NLP</span><span class="tag">LangChain / LLM Agents</span>
+            <span class="tag">GP Autonomous Experimentation</span><span class="tag">FastAPI / RBAC Deployment</span>
+            <span class="tag">Snakemake / DVC / MLflow</span><span class="tag">Python</span><span class="tag">Docker</span>
           </div>
           <div class="xp-links">
             <span class="pl-label">Evidence</span>
@@ -1371,7 +1371,7 @@
       <div class="edu-card harvard">
         <h4>ALM, Data Science &amp; Artificial Intelligence</h4>
         <div class="inst">Harvard University (HES '27)</div>
-        <div class="detail">GPA 4.00 / 4.00 across all completed coursework. Capstone: deterministic reproducibility and provenance harness for multi-modal biomedical ML, advised by Stephen Elston, PhD.</div>
+        <div class="detail">GPA <a href="https://snptx1.github.io/snptx-academic/pages/academic-resume-ref.html" style="color: var(--accent-blue);">4.00</a> across all completed coursework. Capstone: multi-modal biomedical ML, advised by Stephen Elston, PhD.</div>
       </div>
       <div class="edu-card mit">
         <h4>MicroMasters, Statistics &amp; Data Science</h4>
