@@ -286,6 +286,27 @@
     background: rgba(88,166,255,0.08);
   }
   .xp-links a:hover { background: rgba(88,166,255,0.18); border-color: rgba(88,166,255,0.7); }
+  .xp-links a.pp-green  { color: var(--accent-green);  border-color: rgba(63,185,80,0.4);  background: rgba(63,185,80,0.08); }
+  .xp-links a.pp-green:hover  { background: rgba(63,185,80,0.18);  border-color: rgba(63,185,80,0.7); }
+  .xp-links a.pp-purple { color: var(--accent-purple); border-color: rgba(188,140,255,0.4); background: rgba(188,140,255,0.08); }
+  .xp-links a.pp-purple:hover { background: rgba(188,140,255,0.18); border-color: rgba(188,140,255,0.7); }
+
+  .xp-preprints { margin-top: 12px; display: grid; gap: 8px; }
+  .xp-preprints .pp-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    padding: 10px 12px; border-radius: 8px;
+    background: rgba(22,27,34,0.6); border: 1px solid var(--border);
+  }
+  .xp-preprints .pp-row.green  { border-left: 2px solid var(--accent-green); }
+  .xp-preprints .pp-row.purple { border-left: 2px solid var(--accent-purple); }
+  .xp-preprints .pp-tag {
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .xp-preprints .pp-tag.green  { color: var(--accent-green); }
+  .xp-preprints .pp-tag.purple { color: var(--accent-purple); }
+  .xp-preprints .pp-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; flex: 1 1 240px; }
+  .xp-preprints .pp-links { margin-top: 0; }
 
   .xp-stack {
     display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
@@ -1182,12 +1203,12 @@
         </div>
         <div class="xp-org">ML/DL orchestration for biomedical discovery &middot; incubated at the <strong><a class="no-underline" href="https://innovationlabs.harvard.edu/">Harvard Innovation Labs</a></strong> &middot; Cambridge, MA</div>
         <div class="xp-body">
-          <p><!--SLOT:SNPTX_LEAD-->Founded and solo-built SNPTX, an autonomous ML/DL framework for biomedical discovery. Multi-modal graph, sequence, and generative modeling across eight modality families and 46 active biomedical datasets, closed-loop with a Gaussian-process-guided autonomous experimentation engine that runs at production throughput. The build spans PyTorch (GNNs, diffusion models, transformer-based NLP), LLM / agent orchestration, and a research-grade provenance spine.<!--/SLOT:SNPTX_LEAD--></p>
+          <p><!--SLOT:SNPTX_LEAD-->Founded and solo-built SNPTX, an autonomous ML/DL framework for biomedical discovery. It pairs graph, sequence, and generative models across eight data modalities and 46 biomedical datasets with a decision engine that picks which experiments to run next and when to stop &mdash; a closed discovery loop at production throughput. The stack spans PyTorch (graph neural nets, diffusion models, biomedical NLP), LLM / agent orchestration, and a reproducible provenance spine. Two methods papers are now public as preprints (below).<!--/SLOT:SNPTX_LEAD--></p>
           <ul class="xp-bullets"><!--SLOT:SNPTX_BULLETS-->
             <li><strong>Model layer.</strong> PyTorch graph neural networks (GCN, GAT) for molecular and knowledge graphs; diffusion models; transformer-based biomedical NLP (BiLSTM-CRF and BERT-family NER on BC5CDR); vision + tabular fusion across imaging, omics, and spatial transcriptomics. Public benchmarks include ChEMBL antibacterial 5-fold CV 97.5%, drug-GCN baseline 98.5%, and Visium spatial fusion 93.0%.</li>
-            <li><strong>Autonomous experimentation (ExperimentEngine).</strong> Gaussian-process surrogates with Expected-Improvement and Value-of-Information acquisition and sequential-probability-ratio-test stopping (&alpha; = &beta; = 0.05); DuckDB experiment catalog. Validated at 1,037 experiments per hour and 104 discoveries per 1,100-experiment campaign; surrogate expected calibration error 0.055.</li>
+            <li><strong>Autonomous experimentation (Experiment Engine).</strong> Gaussian-process surrogates rank which experiments carry the most information and call a stop once a result is statistically settled (sequential-probability-ratio-test stopping), backed by a DuckDB experiment catalog. Validated at ~1,000 experiments per hour and ~104 discoveries per 1,100-experiment campaign; surrogate calibration error 0.055.</li>
             <li><strong>LLM &amp; agent tooling.</strong> LangChain-based agent orchestration and prompt engineering for scientific reasoning workflows layered over the model catalog; retrieval, tool-use, and evaluation surfaces feeding the same experimentation loop.</li>
-            <li><strong>Deployment &amp; benchmark surface.</strong> FastAPI inference (tabular / fusion / batch), RBAC with HMAC-signed tokens, and hash-chained audit at a 21 CFR Part 11 posture, lab-hosted via Terraform + Helm. Cross-lab benchmark surface with leakage-free splits and calibration-corrected leaderboards. Two external trust artifacts: <a href="https://github.com/snptx1/snptx-repro-chembl">snptx-repro-chembl</a> (~5-min CPU reproduction of the ChEMBL bioactivity GCN baseline) and <a href="https://github.com/snptx1/snptx-repro-deepdds">snptx-repro-deepdds</a> (DeepDDS drug-synergy graph-attention).</li>
+            <li><strong>Deployment &amp; benchmarking.</strong> FastAPI inference services (tabular / fusion / batch) with role-based access, signed tokens, and tamper-evident audit at a 21 CFR Part 11 posture, lab-hosted via Terraform + Helm. Benchmarks run on leakage-free splits with calibration-corrected leaderboards; a one-command, ~5-minute CPU reproduction of the ChEMBL bioactivity baseline is public at <a href="https://github.com/snptx1/snptx-repro-chembl">snptx-repro-chembl</a>.</li>
             <li>Positioning SNPTX for pilot engagements with academic labs and translational-research groups; reviewer-facing inspection surface at <a href="https://snptx1.github.io/snptx-academic/index.html#for-review">snptx-academic</a>. Concurrently completing the Harvard ALM in Data Science &amp; Artificial Intelligence at 4.00 / 4.00 GPA, routing each graduate final project into SNPTX as a bounded modeling artifact.</li>
           <!--/SLOT:SNPTX_BULLETS--></ul>
           <div class="xp-stack">
@@ -1200,8 +1221,27 @@
             <span class="pl-label">Evidence</span>
             <a href="https://snptx1.github.io/snptx-academic/index.html#for-review">snptx-academic</a>
             <a href="https://github.com/snptx1/snptx-repro-chembl">repro-chembl</a>
-            <a href="https://github.com/snptx1/snptx-repro-deepdds">repro-deepdds</a>
             <a href="https://github.com/snptx1">github</a>
+          </div>
+          <div class="xp-preprints">
+            <div class="pp-row green">
+              <span class="pp-tag green">Preprint 1 &middot; Decision engine</span>
+              <span class="pp-desc">Knowing what to measure and when to stop &mdash; a calibrated sequential decision engine for molecular-property (ADMET) discovery. 23&ndash;34% fewer measurements to a confident go/no-go call.</span>
+              <span class="xp-links pp-links">
+                <a class="pp-green" href="https://github.com/snptx1/snptx-repro-discovery">Repo &rarr;</a>
+                <a class="pp-green" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/preprint/MANUSCRIPT_calibrated_sequential_discovery.md">Manuscript &rarr;</a>
+                <a class="pp-green" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/notebooks/walkthrough_calibrated_sequential_discovery.ipynb">Notebook &rarr;</a>
+              </span>
+            </div>
+            <div class="pp-row purple">
+              <span class="pp-tag purple">Preprint 2 &middot; Learned representations</span>
+              <span class="pp-desc">Learned molecular representations with calibrated deep-ensemble uncertainty for label-efficient ADMET decisions, under a pre-registered, leakage-controlled protocol.</span>
+              <span class="xp-links pp-links">
+                <a class="pp-purple" href="https://github.com/snptx1/snptx-repro-discovery/tree/main/preprint/dl_forward">Repo &rarr;</a>
+                <a class="pp-purple" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/preprint/dl_forward/MANUSCRIPT_learned_representations_admet.md">Manuscript &rarr;</a>
+                <a class="pp-purple" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/preprint/dl_forward/walkthrough_learned_representations_admet.ipynb">Notebook &rarr;</a>
+              </span>
+            </div>
           </div>
         </div>
       </article>
