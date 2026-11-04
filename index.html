@@ -954,6 +954,46 @@
     .glow-badge.acquired, .glow-badge.active { animation: none !important; box-shadow: none !important; }
   }
 
+  /* ── Research record & links ── */
+  .link-list { display: grid; gap: 12px; margin-top: 10px; }
+  .link-group {
+    background: rgba(22,27,34,0.78);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-cyan);
+    border-radius: 10px;
+    padding: 12px 18px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .link-group.key { border-left-color: var(--accent-purple); }
+  .link-group .lg-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+  .link-row {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    gap: 12px;
+    padding: 5px 0;
+    border-top: 1px dashed rgba(110,118,129,0.28);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.45;
+  }
+  .link-row:first-of-type { border-top: none; }
+  .link-row .lr-lbl { color: var(--text-secondary); }
+  .link-row .lr-url { color: var(--accent-blue); text-decoration: none; word-break: normal; overflow-wrap: normal; }
+  @media (max-width: 640px) {
+    .link-row { grid-template-columns: 1fr; gap: 2px; }
+  }
+  @media print {
+    .link-group { background: #fff !important; border-color: #ddd !important; break-inside: avoid; }
+    .link-group .lg-title { color: #111 !important; }
+    .link-row .lr-lbl { color: #333 !important; }
+  }
+
   /* ── Footer ── */
   footer.page-footer {
     margin-top: 32px;
@@ -1031,7 +1071,7 @@
       <div></div>
       <div><strong>Prior founder exit</strong> &middot; FIVSS &rarr; Booking Holdings</div>
       <div><strong>Email</strong> &middot; <a href="mailto:dan@snptx.ai">dan@snptx.ai</a> &middot; <a href="mailto:drr508@g.harvard.edu">drr508@g.harvard.edu</a></div>
-      <div><strong>Web</strong> &middot; <a href="https://snptx1.github.io/snptx-academic/index.html">SNPTX</a> &middot; <a href="https://github.com/snptx1">Github</a> &middot; <a href="https://snptx1.github.io/professional/" style="font-weight:700;">Resume</a></div>
+      <div><strong>Web</strong> &middot; <a href="https://snptx1.github.io/snptx-academic/index.html">SNPTX</a> &middot; <a href="https://github.com/snptx1">Github</a> &middot; <a href="https://snptx1.github.io/professional/" style="font-weight:700;">Resume</a> &middot; <a href="#links" style="font-weight:700;">All links</a></div>
     </div>
     <div class="institutions-ribbon" aria-label="Notable institutions">
       <span class="inst-lbl">Institutions</span>
@@ -1238,7 +1278,7 @@
             <li><strong>Data &amp; ML:</strong> Designed and ran ingestion pipelines against rate-source APIs and structured scrapers; normalized and warehoused millions of price observations in SQL. Trained gradient-boosted and time-series demand models that generated per-suite fair-value estimates and rank-ordered opportunities by expected margin.</li>
             <li><strong>Platform:</strong> Built the full transactional web application &mdash; inventory dashboard, buyer-facing UI, payments integration, and back-office reconciliation &mdash; as sole engineer for the founding stretch.</li>
             <li><strong>Commercial operations:</strong> Formed the operating entity, negotiated supplier and partner agreements, ran the day-to-day P&amp;L, and grew the business from bootstrapped prototype to a cash-flow-generating operator with recurring inventory relationships.</li>
-            <li><strong>Exit:</strong> Led the buyer-side workstream through diligence and close, culminating in the IP acquisition by Booking Holdings.</li>
+            <li><strong>Exit:</strong> Led the sell-side workstream through diligence and close, culminating in the IP acquisition by Booking Holdings.</li>
           </ul>
           <div class="xp-stack">
             <span class="tag">Predictive Pricing</span><span class="tag">Demand Forecasting</span>
@@ -1257,7 +1297,7 @@
           <span class="xp-dates">Pre-2012</span>
         </div>
         <div class="xp-body">
-          <p>VP-level sales-and-trading roles in banking (Morgan Stanley, Merrill Lynch, etc.) including client coverage and market-facing execution in a large-account, high-throughput trading environment; the quantitative, commercial, and business analysis substrate underneath the subsequent founder chapters.</p>
+          <p>VP-level sales-and-trading roles in banking (Morgan Stanley, Merrill Lynch, etc.) including client coverage and market-facing execution in a large-account, high-throughput trading environment; the quantitative, commercial, and business analysis substrate beneath the subsequent founder chapters.</p>
         </div>
       </article>
 
@@ -1442,7 +1482,7 @@
     <span class="chip-label"><span class="swatch" style="background:var(--text-secondary);"></span>Commercial &amp; operating</span>
     <div class="chips">
       <span class="chip slate">Founder / Sole Operator</span>
-      <span class="chip slate">M&amp;A &middot; Buyer-Side Diligence</span>
+      <span class="chip slate">M&amp;A &middot; Sell-Side Diligence</span>
       <span class="chip slate">Entity Formation</span>
       <span class="chip slate">P&amp;L Ownership</span>
       <span class="chip slate">Technical Writing &amp; Reviewer Communication</span>
@@ -1607,10 +1647,48 @@
 
   </section>
 
+  <!-- ───────────── RESEARCH RECORD & LINKS ───────────── -->
+  <section class="section" id="links">
+    <h2>Research record &amp; links</h2>
+    <p class="sub">Full addresses for the research record, both preprints, the code, and the academic record.</p>
+
+    <div class="link-list">
+      <div class="link-group key">
+        <div class="lg-title">Research record</div>
+        <div class="link-row"><span class="lr-lbl">Research record (PDF)</span><a class="lr-url" href="https://snptx1.github.io/snptx-academic/assets/research_record/Daniel_R_Russell_Publications_and_Abstracts.pdf">snptx1.github.io/<wbr>snptx-academic/<wbr>assets/<wbr>research_record/<wbr>Daniel_R_Russell_Publications_and_Abstracts.pdf</a></div>
+      </div>
+      <div class="link-group">
+        <div class="lg-title">Preprint 1 &middot; Knowing what to measure and when to stop</div>
+        <div class="link-row"><span class="lr-lbl">Manuscript</span><a class="lr-url" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/preprint/MANUSCRIPT_calibrated_sequential_discovery.md">github.com/<wbr>snptx1/<wbr>snptx-repro-discovery/<wbr>blob/<wbr>main/<wbr>preprint/<wbr>MANUSCRIPT_calibrated_sequential_discovery.md</a></div>
+        <div class="link-row"><span class="lr-lbl">Walkthrough (HTML)</span><a class="lr-url" href="https://snptx1.github.io/snptx-academic/pages/notebooks/walkthrough_calibrated_sequential_discovery.html">snptx1.github.io/<wbr>snptx-academic/<wbr>pages/<wbr>notebooks/<wbr>walkthrough_calibrated_sequential_discovery.html</a></div>
+        <div class="link-row"><span class="lr-lbl">Notebook (ipynb)</span><a class="lr-url" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/notebooks/walkthrough_calibrated_sequential_discovery.ipynb">github.com/<wbr>snptx1/<wbr>snptx-repro-discovery/<wbr>blob/<wbr>main/<wbr>notebooks/<wbr>walkthrough_calibrated_sequential_discovery.ipynb</a></div>
+      </div>
+      <div class="link-group">
+        <div class="lg-title">Preprint 2 &middot; Molecular graph models for ADMET</div>
+        <div class="link-row"><span class="lr-lbl">Manuscript</span><a class="lr-url" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/preprint/dl_forward/MANUSCRIPT_learned_representations_admet.md">github.com/<wbr>snptx1/<wbr>snptx-repro-discovery/<wbr>blob/<wbr>main/<wbr>preprint/<wbr>dl_forward/<wbr>MANUSCRIPT_learned_representations_admet.md</a></div>
+        <div class="link-row"><span class="lr-lbl">Walkthrough (HTML)</span><a class="lr-url" href="https://snptx1.github.io/snptx-academic/pages/notebooks/walkthrough_learned_representations_admet.html">snptx1.github.io/<wbr>snptx-academic/<wbr>pages/<wbr>notebooks/<wbr>walkthrough_learned_representations_admet.html</a></div>
+        <div class="link-row"><span class="lr-lbl">Notebook (ipynb)</span><a class="lr-url" href="https://github.com/snptx1/snptx-repro-discovery/blob/main/preprint/dl_forward/walkthrough_learned_representations_admet.ipynb">github.com/<wbr>snptx1/<wbr>snptx-repro-discovery/<wbr>blob/<wbr>main/<wbr>preprint/<wbr>dl_forward/<wbr>walkthrough_learned_representations_admet.ipynb</a></div>
+      </div>
+      <div class="link-group">
+        <div class="lg-title">Code</div>
+        <div class="link-row"><span class="lr-lbl">Engine repository</span><a class="lr-url" href="https://github.com/snptx1/snptx-repro-discovery">github.com/<wbr>snptx1/<wbr>snptx-repro-discovery</a></div>
+        <div class="link-row"><span class="lr-lbl">5-minute CPU reproduction</span><a class="lr-url" href="https://github.com/snptx1/snptx-repro-chembl">github.com/<wbr>snptx1/<wbr>snptx-repro-chembl</a></div>
+        <div class="link-row"><span class="lr-lbl">GitHub profile</span><a class="lr-url" href="https://github.com/snptx1">github.com/<wbr>snptx1</a></div>
+      </div>
+      <div class="link-group">
+        <div class="lg-title">Research site and records</div>
+        <div class="link-row"><span class="lr-lbl">SNPTX research site</span><a class="lr-url" href="https://snptx1.github.io/snptx-academic/">snptx1.github.io/<wbr>snptx-academic</a></div>
+        <div class="link-row"><span class="lr-lbl">Academic transcript</span><a class="lr-url" href="https://snptx1.github.io/snptx-academic/pages/academic-resume-ref.html">snptx1.github.io/<wbr>snptx-academic/<wbr>pages/<wbr>academic-resume-ref.html</a></div>
+        <div class="link-row"><span class="lr-lbl">This r&eacute;sum&eacute; (live)</span><a class="lr-url" href="https://snptx1.github.io/professional/">snptx1.github.io/<wbr>professional</a></div>
+      </div>
+    </div>
+
+  </section>
+
   <footer class="page-footer">
     <div>Daniel R. Russell &middot; <a href="mailto:dan@snptx.ai">dan@snptx.ai</a> &middot; <a href="mailto:drr508@g.harvard.edu">drr508@g.harvard.edu</a></div>
     <div><a href="https://snptx1.github.io/snptx-academic/index.html">snptx-academic &rarr;</a> &middot; <a href="https://github.com/snptx1">github @snptx1</a></div>
-    <div>Document v2026.10.31 &middot; Professional resume</div>
+    <div>Document v2026.11.04 &middot; Professional resume</div>
   </footer>
 
 </div>
